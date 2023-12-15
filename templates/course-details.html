@@ -1,0 +1,590 @@
+{% extends "app/layout.html" %}
+{% load static %}
+
+
+
+
+
+
+{% block 'details' %} 
+
+
+        <div class="breadcrumbarea">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="breadcrumb__content__wraper" data-aos="fade-up">
+                            <div class="breadcrumb__title">
+                                <h2 class="heading">Course-Details</h2>
+                            </div>
+                            <div class="breadcrumb__inner">
+                                <ul>
+                                    <li><a href="{% url 'index'%}">Home</a></li>
+                                    <li>Course-Details</li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="shape__icon__2">
+                <img class=" shape__icon__img shape__icon__img__1" src="{% static 'img/herobanner/herobanner__1.png' %}" alt="photo">
+                <img class=" shape__icon__img shape__icon__img__2" src="{% static 'img/herobanner/herobanner__2.png' %} " alt="photo">
+                <img class=" shape__icon__img shape__icon__img__3" src="{% static 'img/herobanner/herobanner__3.png' %} " alt="photo">
+                <img class=" shape__icon__img shape__icon__img__4" src="{% static 'img/herobanner/herobanner__5.png' %} " alt="photo">
+            </div>
+
+        </div>
+        <!-- breadcrumbarea__section__end-->
+
+        <div class="blogarea__2 sp_top_100 sp_bottom_100">
+            <div class="container">
+                <div class="row">
+                  
+                    <div class="col-xl-8 col-lg-8">
+
+                        <div class="blogarae__img__2 course__details__img__2" data-aos="fade-up">
+                            <img src="{{detail.pic.url}}" alt="blog">
+
+                            <!-- <div class="registerarea__content course__details__video">
+                                <div class="registerarea__video">
+                                    <div class="video__pop__btn">
+                                        <a class="video-btn" href="https://www.youtube.com/watch?v=vHdclsdkp28"> <img src="img/icon/video.png" alt=""></a>
+                                    </div>
+
+
+                                </div>
+                            </div> -->
+                        </div>
+
+                        <div class="blog__details__content__wraper">
+                           
+                            <div class="course__button__wraper" data-aos="fade-up">
+                                <div class="course__button">
+                                    <a href="#">Featured</a>
+                                    <a class="course__2" href="#">Ux Design</a>
+                                </div>
+                                <div class="course__date">
+                                    <p>Last Update:<span> Sep 29, 2023</span></p>
+                                </div>
+                            </div>
+                            <div class="course__details__heading" data-aos="fade-up">
+                                <h3>{{ detail.course_name }}</h3>
+                            </div>
+                            <div class="course__details__price" data-aos="fade-up">
+                                <ul>
+                                    <li>
+                                        <div class="course__price">
+                                            {{detail.course_fee}} <del>/ ₹7067.00</del>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="course__details__date">
+                                            <i class="icofont-book-alt"></i> 23 Lesson
+                                        </div>
+
+                                    </li>
+                                    <li>
+                                        <div class="course__star">
+                                            <i class="icofont-star"></i>
+                                            <i class="icofont-star"></i>
+                                            <i class="icofont-star"></i>
+                                            <i class="icofont-star"></i>
+                                            <i class="icofont-star"></i>
+                                            <span>(44)</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="course__details__paragraph" data-aos="fade-up">
+                                <p>{{ detail.course_description }}
+                                </p>
+                            </div>
+
+                            <h4 class="sidebar__title" data-aos="fade-up">Course Details</h4>
+                        
+                            <div class="course__details__wraper" data-aos="fade-up">
+
+                                <ul>
+
+                                    <li>
+                                        Enrolled : <span> 2 students</span>
+                                    </li>
+                                    <li>
+                                        Course level : <span>Intermediate</span>
+                                    </li>
+                                    <li>
+                                        Language : <span>English spanish</span>
+                                    </li>
+
+                                </ul>
+                                <ul>
+
+                                    <li>
+                                        Price Discount : <span>-20%</span>
+                                    </li>
+                                    <li>
+                                        Regular Price : <span>₹{{detail.course_fee }}</span>
+                                    </li>
+                                    <li>
+                                        Course Status : <span>{{detail.course_status}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="course__details__tab__wrapper" data-aos="fade-up">
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <ul class="nav  course__tap__wrap" id="myTab" role="tablist">
+
+                                            <li class="nav-item" role="presentation">
+                                                <button class="single__tab__link active" data-bs-toggle="tab"
+                                                    data-bs-target="#projects__two" type="button"><i
+                                                        class="icofont-book-alt"></i>Curriculum</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="single__tab__link" data-bs-toggle="tab"
+                                                    data-bs-target="#projects__one" type="button"><i
+                                                        class="icofont-paper"></i>Description</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="single__tab__link" data-bs-toggle="tab"
+                                                    data-bs-target="#projects__three" type="button"><i
+                                                        class="icofont-star"></i>Reviews</button>
+                                            </li>
+
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="tab-content tab__content__wrapper" id="myTabContent">
+                                    <div class="tab-pane fade  active show" id="projects__two" role="tabpanel"
+                                        aria-labelledby="projects__two">
+
+                                        
+
+
+
+                                        <div class="accordion content__cirriculum__wrap" id="accordionExample">
+                                            {% for lesson in detail.lessons_set.all  %}
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingOne">
+                                                    <button class="accordion-button" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                                        aria-expanded="true" aria-controls="collapseOne">
+                                                        {{lesson.lesson_title}}<span>02hr 35min</span>
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body">
+                                                        {% for v in lesson.video_set.all  %}
+                                                        <div class="scc__wrap">
+                                                          
+                                                            <div class="scc__info">
+                                                                <i class="icofont-video-alt"></i>
+                                                                <h5> <span>Video :</span> {{ v.video_title}}
+                                                                </h5>
+                                                             
+                                                            </div>
+                                                            <div class="scc__meta">
+                                                                <span class="time"> <i class="icofont-clock-time"></i>
+                                                                    {{v.duration}} minutes</span>
+                                                                <a href="{% url 'lesson' slug=detail.slug %}"><span class="question"><i
+                                                                            class="icofont-eye"></i> Preview</span></a>
+                                                            </div>
+                                                          
+                                                        </div>
+                                                        {% endfor %}
+                                                       
+                                                        
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {% endfor %}  
+                                        </div>
+                                      
+
+                                    </div>
+
+                                    <div class="tab-pane fade" id="projects__one" role="tabpanel"
+                                        aria-labelledby="projects__one">
+                                        <div class="experence__heading">
+                                            <h5> Experience Description</h5>
+                                        </div>
+                                        <div class="experence__description">
+                                            <p class="description__1">{{detail.course_description}}
+                                            </p>
+                                            
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <div class="tab-pane fade" id="projects__three" role="tabpanel"
+                                        aria-labelledby="projects__three">
+
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="review__box">
+                                                    <div class="review__number">5.0</div>
+                                                    <div class="review__icon">
+                                                        <i class="icofont-star"></i>
+                                                        <i class="icofont-star"></i>
+                                                        <i class="icofont-star"></i>
+                                                        <i class="icofont-star"></i>
+                                                        <i class="icofont-star"></i>
+                                                    </div>
+                                                    <span>(17 Reviews)</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-8 col--30">
+                                                <div class="review__wrapper">
+
+                                                    <div class="single__progress__bar">
+                                                        <div class="rating__text">
+                                                            5 <i class="icofont-star"></i>
+                                                        </div>
+                                                        <div class="progress">
+                                                            <div class="progress-bar" role="progressbar"
+                                                                style="width: 100%" aria-valuenow="100"
+                                                                aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                        <span class="rating-value">10</span>
+                                                    </div>
+
+                                                    <div class="single__progress__bar">
+                                                        <div class="rating__text">
+                                                            4 <i class="icofont-star"></i>
+                                                        </div>
+                                                        <div class="progress">
+                                                            <div class="progress-bar" role="progressbar"
+                                                                style="width: 80%" aria-valuenow="80" aria-valuemin="0"
+                                                                aria-valuemax="100"></div>
+                                                        </div>
+                                                        <span class="rating-value">5</span>
+                                                    </div>
+
+                                                    <div class="single__progress__bar">
+                                                        <div class="rating__text">
+                                                            3 <i class="icofont-star"></i>
+                                                        </div>
+                                                        <div class="progress">
+                                                            <div class="progress-bar" role="progressbar"
+                                                                style="width: 60%" aria-valuenow="60" aria-valuemin="0"
+                                                                aria-valuemax="100"></div>
+                                                        </div>
+                                                        <span class="rating-value">3</span>
+                                                    </div>
+
+                                                    <div class="single__progress__bar">
+                                                        <div class="rating__text">
+                                                            2 <i class="icofont-star"></i>
+                                                        </div>
+                                                        <div class="progress">
+                                                            <div class="progress-bar" role="progressbar"
+                                                                style="width: 30%" aria-valuenow="30" aria-valuemin="0"
+                                                                aria-valuemax="100"></div>
+                                                        </div>
+                                                        <span class="rating-value">2</span>
+                                                    </div>
+
+                                                    <div class="single__progress__bar">
+                                                        <div class="rating__text">
+                                                            1 <i class="icofont-star"></i>
+                                                        </div>
+                                                        <div class="progress">
+                                                            <div class="progress-bar" role="progressbar"
+                                                                style="width: 10%" aria-valuenow="10" aria-valuemin="0"
+                                                                aria-valuemax="100"></div>
+                                                        </div>
+                                                        <span class="rating-value">1</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="property__facts__feature property__facts__feature__2 ">
+                                            <h4>Customer Reviews</h4>
+ 
+
+                                            {% for r in detail.reviews_set.all  %}
+                                            <ul class="property__comment">
+                                              
+                                                <li class="property__comment__list" style="display: flex;overflow-wrap: anywhere;flex-wrap: nowrap;height: 150px;">                                                  
+                                                    
+                                                    <div class="property__comment__img">
+                                                        <img src="{{r.user.userprofile.profile_picture.url}} " alt="Image">
+                                                    </div>
+                                                    <div class="property__comment__comment">
+                                                        <h6><a href="#">{{r.user}}</a></h6>
+                                                        <div class="property__sidebar__icon">
+                                                            <ul>
+                                                                <li><i class="icofont-star"></i></li>
+                                                                <li><i class="icofont-star"></i></li>
+                                                                <li><i class="icofont-star"></i></li>
+                                                                <li><i class="icofont-star"></i></li>
+                                                                <li><i class="icofont-star"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <p style="min-height: 250px;">
+                                                            {{r.review_text}}
+                                                        </p>
+                                                        <span class="property__comment__reply__btn">{{r.review_date}}</span>
+                                                    </div>
+                                                
+                                                </li>
+                                               
+                                            </ul>
+                                            {% endfor %}
+                                        </div>
+
+                                        <form action="{% url "coursed"  slug=detail.slug  %}" class="add__a__review__wrapper" method="POST">
+                                            {% csrf_token %}
+                                           
+                                            <h4>Add a Review</h4>
+                                            <div class="add__a__review">
+                                                <h6>Your Ratings:</h6>
+                                                <div class="property__sidebar__icon">
+                                                    <ul>
+                                                        <li><i class="icofont-star"></i></li>
+                                                        <li><i class="icofont-star"></i></li>
+                                                        <li><i class="icofont-star"></i></li>
+                                                        <li><i class="icofont-star"></i></li>
+                                                        <li><i class="icofont-star"></i></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="add__a__review__input">
+                                                <textarea placeholder="Type your comments...."name="review_text"></textarea>
+                                            </div>
+                                            <div class="add__a__review__input">
+                                                <input type="text" placeholder="Type your name...." name="user">
+                                            </div>
+                                            <div class="add__a__review__input">
+                                                <input type="text" placeholder="rating" name="rating">
+                                            </div>
+                                            {% comment %} <div class="add__a__review__input">
+                                                <input type="email" placeholder="Type your email...." name="email">
+                                            </div> {% endcomment %}
+                                           {% comment %} <div class="add__a__review__input">
+                                                <input type="text" name="website" placeholder="Type your website....">
+                                            </div> {% endcomment %}
+                                            <label class="mb-0"><input type="checkbox" name="agree"> Save my name,
+                                                email, and website in this browser for the next time I comment.</label>
+                                            <div class="add__a__review__button">
+                                               
+                                                <button class="default__button" name="sub" type="submit" value="submit">Submit</button>
+                                            </div>
+                                        </form>
+
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+    
+
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-xl-4 col-lg-4">
+
+                        <div class="course__details__sidebar">
+                            <div class="event__sidebar__wraper" data-aos="fade-up">
+
+
+                                <div class="blogarae__img__2 course__details__img__2" data-aos="fade-up">
+                                    <img src="{% static 'img/blog/blog_7.png' %}" alt="blog">
+
+                                    <div class="registerarea__content course__details__video">
+                                        <div class="registerarea__video">
+                                            <div class="video__pop__btn">
+                                                <a class="video-btn" href="https://www.youtube.com/embed/v=vHdclsdkp28">
+                                                    <img src="{% static 'img/icon/video.png' %}" alt=""></a>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="event__price__wraper">
+
+                                    <div class="event__price">
+                                        {{detail.course_fee}} <del>/ ₹7067.00</del>
+                                    </div>
+                                    <div class="event__Price__button">
+                                        <a href="#">68% OFF</a>
+                                    </div>
+                                </div>
+
+                                <div class="course__summery__button">
+                                    <a class="default__button" href="{% url 'cart'%}">Add To Cart</a>
+                                    <a class="default__button default__button--2" href="{% url 'checkout'%}">Buy Now</a>
+                                    <span>
+                                        <i class="icofont-ui-rotation"></i>
+                                        45-Days Money-Back Guarantee
+                                    </span>
+                                </div>
+
+                                <div class="course__summery__lists">
+                                    <ul>
+
+                                        <li>
+                                            <div class="course__summery__item">
+                                                <span class="sb_label">Total Duration</span><span
+                                                    class="sb_content">08Hrs 32Min</span>
+                                            </div>
+                                        </li>
+
+
+                                        <li>
+                                            <div class="course__summery__item">
+                                                <span class="sb_label">Skill Level</span><span
+                                                    class="sb_content">Basic</span>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="course__summery__item">
+                                                <span class="sb_label">Language</span><span
+                                                    class="sb_content">Spanish</span>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="course__summery__item">
+                                                <span class="sb_label">Quiz</span><span class="sb_content">Yes</span>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="course__summery__item">
+                                                <span class="sb_label">Certificate</span><span
+                                                    class="sb_content">Yes</span>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="course__summery__button">
+                                    <p>More inquery about course.</p>
+                                    <a class="default__button default__button--3" href="tel:+917012716483"><i
+                                            class="icofont-phone"></i> +91 70127 16483</a>
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="blogsidebar__content__wraper__2" data-aos="fade-up">
+
+                                <h4 class="sidebar__title">Follow Us</h4>
+                                <div class="follow__icon">
+                                    <ul>
+                                        <li>
+                                            <a href="#"><i class="icofont-facebook"></i></a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#"><i class="icofont-youtube-play"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="icofont-instagram"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="twitter">𝕏</i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="icofont-instagram"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                            <div class="blogsidebar__content__wraper__2" data-aos="fade-up">
+
+                                <h4 class="sidebar__title">Populer Course</h4>
+                                <ul class="course__details__populer__list">
+                                    <li>
+
+                                        <div class="course__details__populer__img">
+                                            <img src="{% static 'img/blog-details/blog-details__6.png' %} " alt="populer">
+                                        </div>
+                                        <div class="course__details__populer__content">
+                                            <span>₹32,000</span>
+                                            <h6>
+                                                <a href="#">Making Music with Other People</a>
+
+                                            </h6>
+                                        </div>
+
+
+
+                                    </li>
+                                    <li>
+
+                                        <div class="course__details__populer__img">
+                                            <img src="{% static 'img/blog-details/blog-details__7.png' %} " alt="populer">
+                                        </div>
+                                        <div class="course__details__populer__content">
+                                            <span>₹32,000</span>
+                                            <h6>
+                                                <a href="#">Making Music with Other People</a>
+
+                                            </h6>
+                                        </div>
+
+
+
+
+                                    </li>
+                                    <li>
+
+                                        <div class="course__details__populer__img">
+                                            <img src="{% static 'img/blog-details/blog-details__8.png' %}" alt="populer">
+                                        </div>
+                                        <div class="course__details__populer__content">
+                                            <span>₹32,000</span>
+                                            <h6>
+                                                <a href="#">Making Music with Other People</a>
+
+                                            </h6>
+                                        </div>
+
+
+
+
+                                    </li>
+                                </ul>
+
+                            </div>
+                           
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+
+
+
+
+
+{% endblock  %}
